@@ -10,4 +10,11 @@ for i in range(len(lines)):
             s.append(lines[i + 1 + j])  # s라는 list에 string 추가.
         seq = "".join(s)  # list를 string으로.
 print(f"title: {title}")
-print(f"seq: {seq}")
+
+ls = []
+result = ""
+for i in range(len(seq)):
+    if seq[i].isalpha():
+        ls.append(seq[i])
+        result = "".join(ls)
+print(f"seq: {result}")
