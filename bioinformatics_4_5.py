@@ -7,7 +7,7 @@ for line in fr:
     ch = line[0:12]  # 공백 또는 대문자(제목?) 부분
     if "TITLE" in ch:
         p = 1
-    elif ch == "            ":
+    elif ch == "            ":  # space 12개..
         pass
     elif "JOURNAL" in ch:
         p = 2

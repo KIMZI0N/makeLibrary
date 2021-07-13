@@ -72,11 +72,48 @@ for line in fr:
     if p == 1:
         list.append(line)
     p = 1
-seq = "".join(list)
+seq = "".join(list)  # base만 있는 sequence
+fr.close()
 
-# for i in range(int(len(seq) / 60) + 1):
-#     print(seq[i : i + 60])
-#     r = int(len(seq) / 3) + 1
-#     for i in range(r):
-#         j = i * 3
-#         print(codon_dic[seq[j : j + 3]])
+ls = []
+r1 = int(len(seq) / 3)
+for i in range(r1):
+    j = i * 3
+    ls.append(seq[j : j + 3])  # codon단위로 ls라는 list에 저장.
+
+r2 = int(len(ls) / 20)
+for s in range(r2):
+    for i in range(20 * s, 20 * s + 20):
+        print(ls[i], end="")
+    print()
+    for j in range(20 * s, 20 * s + 20):
+        print(codon_dic[ls[j]], end="  ")
+    print()
+str = "".join(ls[r2 * 20 :])
+print(str)
+for i in ls[r2 * 20 :]:
+    print(codon_dic[i], end="  ")
+print()
+
+# s_cod = ""
+# s_ami = ""
+# s_cod = "".join(ls[0:20])
+
+# print(s_cod)
+# print(s_ami)
+
+# while문
+# i = 0
+# while True:
+#     print(ls[i],end='')
+#     i +=1
+#     if i == 20:
+#         print()
+#         print(codon_dic[j],end='')
+
+#     print(codon_dic[])
+#     i += 20
+#     if i == 20:
+#         print()
+#         break
+#     continue
