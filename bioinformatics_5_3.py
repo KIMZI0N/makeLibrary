@@ -84,14 +84,14 @@ for i in seq:
     seqCom += dicB[i]
 
 # 상단 출력
-for i in range(int(len(seq) / 3)):
-    print(codon_dic[seq[i * 3 : i * 3 + 3]], end="  ")
+for i in range(0, len(seq), 3):
+    print(codon_dic[seq[i : i + 3]], end="  ")
 print("\n", "", end="")
-for i in range(int(len(seq) / 3 - 1)):
-    print(codon_dic[seq[i * 3 + 1 : i * 3 + 4]], end="  ")
+for i in range(0, len(seq) - 3, 3):
+    print(codon_dic[seq[i + 1 : i + 4]], end="  ")
 print("\n", " ", end="")
-for i in range(int(len(seq) / 3 - 1)):
-    print(codon_dic[seq[i * 3 + 2 : i * 3 + 5]], end="  ")
+for i in range(0, len(seq) - 3, 3):
+    print(codon_dic[seq[i + 2 : i + 5]], end="  ")
 print()
 print(seq)
 
@@ -103,12 +103,12 @@ ls1 = []
 ls2 = []
 ls3 = []
 # 매칭된 아미노산들 list에 저장.
-for i in range(int(len(seqComRev) / 3)):
-    ls1.append(codon_dic[seqComRev[i * 3 : i * 3 + 3]])
-for i in range(int(len(seqComRev) / 3 - 1)):
-    ls2.append(codon_dic[seqComRev[i * 3 + 1 : i * 3 + 4]])
-for i in range(int(len(seqComRev) / 3 - 1)):
-    ls3.append(codon_dic[seqComRev[i * 3 + 2 : i * 3 + 5]])
+for i in range(0, len(seqComRev), 3):
+    ls1.append(codon_dic[seqComRev[i : i + 3]])
+for i in range(0, len(seqComRev) - 3, 3):
+    ls2.append(codon_dic[seqComRev[i + 1 : i + 4]])
+for i in range(0, len(seqComRev) - 3, 3):
+    ls3.append(codon_dic[seqComRev[i + 2 : i + 5]])
 # list를 string으로
 s1 = "  ".join(ls1)
 s2 = "  ".join(ls2)
